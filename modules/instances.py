@@ -7,12 +7,12 @@ import pytz
 
 from modules import database as db
 
-credentials = yaml.load(open('C:/Users/User/PycharmProjects/tt_exchange_tracker_bot/modules/data/credentials.yaml'), Loader=yaml.FullLoader)
+credentials = yaml.load(open('./modules/data/credentials.yaml'), Loader=yaml.FullLoader)
 user_template = {
     'lang': 'en',
     'currency_pair': None,
     'up_interval': None,
-    'tracking_msg_id': None
+    'tracking_job_id': None
 }
 
 storage = MemoryStorage()
