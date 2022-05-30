@@ -4,6 +4,8 @@ set needed variables in `Dockerfile` (bot token and db token)
 after that run `docker-compose up`
 
 Bot token you can get from the BotFather
+
+
 Db token you can get on mongodb.com:
 
 **1.** Create database `exchange_tracker` in collections
