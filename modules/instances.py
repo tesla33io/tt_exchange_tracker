@@ -4,6 +4,7 @@ import yaml
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 import pytz
+import os
 
 from modules import database as db
 
@@ -16,7 +17,9 @@ user_template = {
 }
 
 storage = MemoryStorage()
-bot = Bot(token=credentials['telegram']['bot']['token'])
+# bot = Bot(token=credentials['telegram']['bot']['token'])
+bot = Bot(token=os.getenv('BOT_TOKEN'))
 dp = Dispatcher(bot=bot, storage=storage)
-user = db.DataBase('exchange_tracker', 'users', credentials['database']['token'], '_id')
+# user = db.DataBase('exchange_tracker', 'users', credentials['database']['token'], '_id')
+user = db.DataBase('exchange_tracker', 'users', os.getenv('DB_TOKEN'), '_id')
 scheduler = AsyncIOScheduler(timezone=pytz.timezone("Europe/Kiev"))
